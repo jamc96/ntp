@@ -12,5 +12,8 @@ class ntp(
   $service_ensure = 'running',
   $service_enable = true,
 ) {
-
+  # include classes 
+  include ::ntp::intall
+  include ::ntp::config
+  include ::ntp::service
 }
