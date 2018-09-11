@@ -16,4 +16,9 @@ class ntp(
   include ::ntp::intall
   include ::ntp::config
   include ::ntp::service
+  
+  # module relationship
+  Class['::ntp::install']
+  -> Class['::ntp::config']
+  ~> Class['::ntp::service']
 }
